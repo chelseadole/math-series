@@ -42,3 +42,9 @@ def test_fibonacci(n, result):
     from series import fibonacci
     assert fibonacci(n) == result
 
+
+@pytest.mark.parametrize('n, result', LUCAS_NUMBERS)
+def test_lucas(n, result):
+    """Test for lucas sequence."""
+    from series import lucas
+    assert lucas(n) == result
