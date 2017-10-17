@@ -48,3 +48,16 @@ def test_lucas(n, result):
     """Test for lucas sequence."""
     from series import lucas
     assert lucas(n) == result
+
+
+def test_sum_series(n, op1, op2):
+    """Test the sum function."""
+    from series import fibonacci
+    from series import lucas
+    from series import sum_series
+    if op1 == 0 and op2 == 1:
+        test_fibonacci(n)
+    elif op1 == 2 and op2 == 1:
+        test_lucas(n)
+    else:
+        assert sum_series(n) == sum_series(n - 1) + sum_series(n - 2)
