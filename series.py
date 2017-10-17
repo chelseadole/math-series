@@ -12,6 +12,7 @@ def fibonacci(n):
     else:
         return False
 
+
 def lucas(n):
     """Give the nth number in the lucas series when given n."""
     if n == 0:
@@ -23,8 +24,9 @@ def lucas(n):
     else:
         return False
 
-def sum_series(n, op1 = 0, op2 = 1):
-    """Create new series based on op1 and op2 inputs"""
+
+def sum_series(n, op1=0, op2=1):
+    """Create new series based on op1 and op2 inputs."""
     if op1 == 0 and op2 == 1:
         return fibonacci(n)
     elif op1 == 2 and op2 == 1:
@@ -34,6 +36,5 @@ def sum_series(n, op1 = 0, op2 = 1):
             return op1
         elif n == 1:
             return op2
-        else: 
-            return sum_series(n - 1) + sum_series(n - 2)
-
+        else:
+            return sum_series(n - 1, op1, op2) + sum_series(n - 2, op1, op2)

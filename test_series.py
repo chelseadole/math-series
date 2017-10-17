@@ -30,34 +30,51 @@ LUCAS_NUMBERS = [
     (9, 76)
 ]
 
+SUM_NUMBERS = [
+    (0, 0, 1, 0),
+    (1, 0, 1, 1),
+    (2, 0, 1, 1),
+    (3, 0, 1, 2),
+    (9, 0, 1, 34),
+    (15, 0, 1, 610),
+    (0, 2, 1, 2),
+    (1, 2, 1, 1),
+    (2, 2, 1, 3),
+    (3, 2, 1, 4),
+    (8, 2, 1, 47),
+    (23, 2, 1, 64079),
+    (0, 5, 4, 5),
+    (4, 5, 4, 14),
+    (0, 13, 1, 13),
+    (1, 13, 1, 1),
+    (5, 13, 1, 29),
+    (0, 3, 2, 3),
+    (1, 3, 2, 2),
+    (4, 3, 2, 7)
+]
 
-def test_fib_import():
-    """Test if series imports."""
-    from series import fibonacci
+
+# def test_fib_import():
+#     """Test if series imports."""
+#     from series import fibonacci
 
 
-@pytest.mark.parametrize('n, result', FIB_NUMBERS)
-def test_fibonacci(n, result):
-    """Test for fibonacci sequence."""
-    from series import fibonacci
-    assert fibonacci(n) == result
+# @pytest.mark.parametrize('n, result', FIB_NUMBERS)
+# def test_fibonacci(n, result):
+#     """Test for fibonacci sequence."""
+#     from series import fibonacci
+#     assert fibonacci(n) == result
 
 
-@pytest.mark.parametrize('n, result', LUCAS_NUMBERS)
-def test_lucas(n, result):
-    """Test for lucas sequence."""
-    from series import lucas
-    assert lucas(n) == result
+# @pytest.mark.parametrize('n, result', LUCAS_NUMBERS)
+# def test_lucas(n, result):
+#     """Test for lucas sequence."""
+#     from series import lucas
+#     assert lucas(n) == result
 
 
-def test_sum_series(n, op1, op2):
+@pytest.mark.parametrize('n, op1, op2, result', SUM_NUMBERS)
+def test_sum_series(n, op1, op2, result):
     """Test the sum function."""
-    from series import fibonacci
-    from series import lucas
     from series import sum_series
-    if op1 == 0 and op2 == 1:
-        test_fibonacci(n)
-    elif op1 == 2 and op2 == 1:
-        test_lucas(n)
-    else:
-        assert sum_series(n) == sum_series(n - 1) + sum_series(n - 2)
+    assert sum_series(n, op1, op2) == result
