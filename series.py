@@ -1,4 +1,4 @@
-"""Return nth number of fibonacci and Lucas series."""
+"""Return nth number of fibonacci, Lucas, and new series."""
 
 
 def fibonacci(n):

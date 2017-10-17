@@ -1,4 +1,4 @@
-"""Tests for Fibonacci and Lucas functions."""
+"""Tests for Fibonacci, Lucas and sum_series functions."""
 
 
 import pytest
