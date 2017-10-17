@@ -44,33 +44,33 @@ SUM_NUMBERS = [
     (8, 2, 1, 47),
     (23, 2, 1, 64079),
     (0, 5, 4, 5),
-    (4, 5, 4, 14),
+    (3, 5, 4, 13),
     (0, 13, 1, 13),
     (1, 13, 1, 1),
-    (5, 13, 1, 29),
+    (4, 13, 1, 29),
     (0, 3, 2, 3),
     (1, 3, 2, 2),
-    (4, 3, 2, 7)
+    (4, 3, 2, 12)
 ]
 
 
-# def test_fib_import():
-#     """Test if series imports."""
-#     from series import fibonacci
+def test_fib_import():
+    """Test if series imports."""
+    from series import fibonacci
 
 
-# @pytest.mark.parametrize('n, result', FIB_NUMBERS)
-# def test_fibonacci(n, result):
-#     """Test for fibonacci sequence."""
-#     from series import fibonacci
-#     assert fibonacci(n) == result
+@pytest.mark.parametrize('n, result', FIB_NUMBERS)
+def test_fibonacci(n, result):
+    """Test for fibonacci sequence."""
+    from series import fibonacci
+    assert fibonacci(n) == result
 
 
-# @pytest.mark.parametrize('n, result', LUCAS_NUMBERS)
-# def test_lucas(n, result):
-#     """Test for lucas sequence."""
-#     from series import lucas
-#     assert lucas(n) == result
+@pytest.mark.parametrize('n, result', LUCAS_NUMBERS)
+def test_lucas(n, result):
+    """Test for lucas sequence."""
+    from series import lucas
+    assert lucas(n) == result
 
 
 @pytest.mark.parametrize('n, op1, op2, result', SUM_NUMBERS)

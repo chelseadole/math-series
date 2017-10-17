@@ -37,4 +37,5 @@ def sum_series(n, op1=0, op2=1):
         elif n == 1:
             return op2
         else:
+            print(sum_series(n - 1, op1, op2) + sum_series(n - 2, op1, op2))
             return sum_series(n - 1, op1, op2) + sum_series(n - 2, op1, op2)
