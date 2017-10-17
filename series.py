@@ -23,7 +23,8 @@ def lucas(n):
     else:
         return False
 
-def sum_series(n, op1 = 0, op2 = 1, ):
+def sum_series(n, op1 = 0, op2 = 1):
+    """Create new series based on op1 and op2 inputs"""
     if op1 == 0 and op2 == 1:
         return fibonacci(n)
     elif op1 == 2 and op2 == 1:
