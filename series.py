@@ -22,3 +22,17 @@ def lucas(n):
         return lucas(n - 1) + lucas(n - 2)
     else:
         return False
+
+def sum_series(n, op1 = 0, op2 = 1, ):
+    if op1 == 0 and op2 == 1:
+        return fibonacci(n)
+    elif op1 == 2 and op2 == 1:
+        return lucas(n)
+    else:
+        if n == 0:
+            return op1
+        elif n == 1:
+            return op2
+        else: 
+            return sum_series(n - 1) + sum_series(n - 2)
+
